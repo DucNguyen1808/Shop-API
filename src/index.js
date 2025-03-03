@@ -1,18 +1,22 @@
-const express = require("express");
-const morgan = require("morgan");
-const routerApi = require("./routes");
-const db = require('./config/db')
-
+const express = require('express');
+const morgan = require('morgan');
+const routerApi = require('./routes');
+const cors = require('cors');
+const db = require('./config/db');
+require('dotenv').config();
 const app = express();
-const port = 3000;
+const port = 9090;
 
 app.use(express.json());
-db.connect();
-morgan(":method :url :status :res[content-length] - :response-time ms");
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+app.use(cors());
+db.connectToMongodb();
+
+morgan(':method :url :status :res[content-length] - :response-time ms');
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 routerApi(app);
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
