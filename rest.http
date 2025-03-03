@@ -1,0 +1,22 @@
+###
+POST http://127.0.0.1:3000/api/user/register
+Content-Type: application/json
+
+{
+    "name": "Dao trung hieu",
+    "email":"hieu@gmail.com",
+    "password":"1234678"
+}
+###
+
+POST http://127.0.0.1:3000/api/user/login
+Content-Type: application/json
+
+{
+    "email":"hieu@gmail.com",
+    "password":"1234678"
+}
+###
+GET http://127.0.0.1:3000/api/getList
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzg1MjVjY2IwYWIxZDVhZmQ1YzkwZGMiLCJpYXQiOjE3MzczNTUwNTMsImV4cCI6MTczNzM2MjI1M30.77GOK0ciWjdaIbXdvuvwDwpY1eCm3p2qfotza5wEy8w
+###
